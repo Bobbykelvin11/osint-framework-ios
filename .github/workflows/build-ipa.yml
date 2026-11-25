@@ -24,8 +24,9 @@ jobs:
 
       - name: Generate AppIcon
         run: |
-          python3 -m pip install --quiet pillow
-          python3 scripts/generate_icon.py
+          python3 -m venv "$RUNNER_TEMP/icon-venv"
+          "$RUNNER_TEMP/icon-venv/bin/pip" install --quiet pillow
+          "$RUNNER_TEMP/icon-venv/bin/python" scripts/generate_icon.py
           ls -la OSINTFramework/Assets.xcassets/AppIcon.appiconset/
 
       - name: Install XcodeGen
