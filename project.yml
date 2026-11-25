@@ -1,0 +1,46 @@
+name: OSINTFramework
+options:
+  bundleIdPrefix: com.bobbymedia
+  deploymentTarget:
+    iOS: "16.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+
+settings:
+  base:
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.10"
+    DEVELOPMENT_TEAM: ""
+    CODE_SIGN_STYLE: Automatic
+    GENERATE_INFOPLIST_FILE: NO
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+
+targets:
+  OSINTFramework:
+    type: application
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources:
+      - path: OSINTFramework
+        excludes:
+          - "Web/**"
+          - "Info.plist"
+    resources:
+      - path: OSINTFramework/Web
+        type: folder
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.bobbymedia.osintframework
+        PRODUCT_NAME: OSINTFramework
+        INFOPLIST_FILE: OSINTFramework/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        TARGETED_DEVICE_FAMILY: "1,2"
+        SUPPORTS_MACCATALYST: NO
+
+schemes:
+  OSINTFramework:
+    build:
+      targets:
+        OSINTFramework: all
