@@ -26,9 +26,9 @@ targets:
         excludes:
           - "Web/**"
           - "Info.plist"
-    resources:
       - path: OSINTFramework/Web
         type: folder
+        buildPhase: resources
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.bobbymedia.osintframework
